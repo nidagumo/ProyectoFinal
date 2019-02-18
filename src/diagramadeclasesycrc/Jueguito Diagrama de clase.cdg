@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Jueguito">
+  <ClassDiagramComponents>
+    <Class name="Juego" package="jueguito" visibility="public" xPosition="825.0" yPosition="626.0">
+      <Fields>
+        <Field name="miRobot" type="Robot" visibility="private"/>
+        <Field name="miPared" type="Laberinto" visibility="private"/>
+        <Field name="BtnDown" type="javax.swing.JButton" visibility="private"/>
+        <Field name="BtnLeft" type="javax.swing.JButton" visibility="private"/>
+        <Field name="BtnRight" type="javax.swing.JButton" visibility="private"/>
+        <Field name="BtnUp" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="lblWin" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblX" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblY" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="dibujarRobot" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="crearLaberintoBasico" returnType="void" visibility="private"/>
+        <Method name="dibujarParedes" returnType="void" visibility="public"/>
+        <Method name="formKeyPressed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="formWindowActivated" returnType="void" visibility="private">
+          <Argument type="java.awt.event.WindowEvent" name="evt"/>
+        </Method>
+        <Method name="BtnRightMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="BtnDownMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="BtnLeftMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="BtnUpMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="getMirobot" returnType="Robot" visibility="public"/>
+        <Method name="setMirobot" returnType="void" visibility="public">
+          <Argument type="Robot" name="mirobot"/>
+        </Method>
+        <Method name="getMipared" returnType="Laberinto" visibility="public"/>
+        <Method name="setMipared" returnType="void" visibility="public">
+          <Argument type="Laberinto" name="mipared"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Jueguito" package="jueguito" visibility="public" xPosition="487.0" yPosition="392.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Laberinto" package="logica" visibility="public" xPosition="999.0" yPosition="100.0">
+      <Fields>
+        <Field name="ancho" type="int" visibility="private"/>
+        <Field name="alto" type="int" visibility="private"/>
+        <Field name="murosVerticales" type="boolean" visibility="private"/>
+        <Field name="murosHorizontales" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="ancho"/>
+          <Argument type="int" name="alto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="crearMuro" returnType="void" visibility="public">
+          <Argument type="int" name="a"/>
+          <Argument type="int" name="b"/>
+          <Argument type="boolean" name="direccion"/>
+        </Method>
+        <Method name="chequearMuro" returnType="boolean" visibility="public">
+          <Argument type="int" name="a"/>
+          <Argument type="int" name="b"/>
+          <Argument type="boolean" name="direccion"/>
+        </Method>
+        <Method name="getAncho" returnType="int" visibility="public"/>
+        <Method name="setAncho" returnType="void" visibility="public">
+          <Argument type="int" name="ancho"/>
+        </Method>
+        <Method name="getAlto" returnType="int" visibility="public"/>
+        <Method name="setAlto" returnType="void" visibility="public">
+          <Argument type="int" name="alto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Robot" package="logica" visibility="public" xPosition="100.0" yPosition="807.0">
+      <Fields>
+        <Field name="x" type="int" visibility="private"/>
+        <Field name="y" type="int" visibility="private"/>
+        <Field name="juegoATerminar" type="Juego" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Juego" name="juego"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="MoverArriba" returnType="void" visibility="public"/>
+        <Method name="MoverAbajo" returnType="void" visibility="public"/>
+        <Method name="MoverIzquierda" returnType="void" visibility="public"/>
+        <Method name="MoverDerecha" returnType="void" visibility="public"/>
+        <Method name="coordenadaX" returnType="int" visibility="public"/>
+        <Method name="coordenadaY" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="jueguito.Juego" target="logica.Robot" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="juegoATerminar" source="logica.Robot" target="jueguito.Juego" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="miPared" source="jueguito.Juego" target="logica.Laberinto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="miRobot" source="jueguito.Juego" target="logica.Robot" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jueguito.Juego" target="logica.Laberinto" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
